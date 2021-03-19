@@ -18,33 +18,32 @@ steps:
 # For CI runs on master, automatically publish packages
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
-    artifactoryService: 'Artifactory'
+    artifactoryService: 'Art-support-euw'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
-    excludeEnvVars: 
 
 - task: ArtifactoryXrayScan@1
   inputs:
-    artifactoryService: 'Artifactory'
+    artifactoryService: 'Art-support-euw'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     allowFailBuild: true
 
 - task: ArtifactoryBuildPromotion@1
   inputs:
-    artifactoryService: 'Artifactory'
+    artifactoryService: 'Art-support-euw'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
-    targetRepo: 'npm'
+    targetRepo: 'kayal-npm'
     status: 'Released'
-    sourceRepo: 'npm-local'
+    sourceRepo: 'kayal-npm-local'
     includeDependencies: true
     copy: false
     dryRun: false
 
 - task: ArtifactoryXrayScan@1
   inputs:
-    artifactoryService: 'Artifactory'
+    artifactoryService: 'Art-support-euw'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     allowFailBuild: true
