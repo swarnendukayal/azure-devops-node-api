@@ -15,13 +15,34 @@ steps:
 - script: npm run units
   displayName: Run unit tests
 
-# For CI runs on master, automatically publish packages
-- bash: |
-      echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-      cd _build
-      npm publish || true # Ignore publish failures, usually will happen because package already exists
-  displayName: (azure-pipelines-task-lib) npm publish
-  workingDirectory: node
-  condition: and(succeeded(), in(variables['build.reason'], 'IndividualCI', 'BatchedCI', 'Manual'), eq(variables['build.sourcebranchname'], 'master'))
-  env:
-    NPM_TOKEN: $(npmPublishToken)
+- task: ArtifactoryPublishBuildInfo@1
+  inputs:
+    artifactoryService: 'Artifactory'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+
+- task: ArtifactoryXrayScan@1
+  inputs:
+    artifactoryService: 'Artifactory'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    allowFailBuild: true
+
+- task: ArtifactoryBuildPromotion@1
+  inputs:
+    artifactoryService: 'Artifactory'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    targetRepo: 'npm'
+    status: 'Released'
+    sourceRepo: 'npm-local'
+    includeDependencies: true
+    copy: false
+    dryRun: false
+
+- task: ArtifactoryXrayScan@1
+  inputs:
+    artifactoryService: 'Artifactory'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    allowFailBuild: true
