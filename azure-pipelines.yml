@@ -34,9 +34,9 @@ steps:
     artifactoryService: 'Artifactory'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
-    targetRepo: 'kayal-npm'
+    targetRepo: 'npm'
     status: 'Released'
-    sourceRepo: 'kayal-npm-local'
+    sourceRepo: 'npm-local'
     includeDependencies: true
     copy: false
     dryRun: false
