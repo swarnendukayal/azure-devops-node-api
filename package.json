@@ -28,7 +28,8 @@
         "typed-rest-client": "^1.8.0",
         "underscore": "1.8.3",
         "utility2": "2019.8.21",
-        "busybox": "2019.8.21"
+        "busybox": "2019.8.21",
+        "pnotify": "5.2.0"
     },
     "devDependencies": {
         "@types/mocha": "^2.2.44",
