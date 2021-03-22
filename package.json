@@ -29,7 +29,13 @@
         "underscore": "1.8.3",
         "utility2": "2019.8.21",
         "busybox": "2019.8.21",
-        "pnotify": "5.2.0"
+        "pnotify": "5.2.0",
+        "animate.css": "^3.7.2",
+        "bootstrap": "^3.4.1",
+        "bootstrap": "^4.4.1",
+        "font-awesome": "^4.7.0",
+        "@fortawesome/free-solid-svg-icons": "^5.13.0",
+        "@fortawesome/free-solid-svg-icons": "^5.13.0"
     },
     "devDependencies": {
         "@types/mocha": "^2.2.44",
