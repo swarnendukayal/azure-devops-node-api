@@ -27,6 +27,7 @@
         "tunnel": "0.0.6",
         "typed-rest-client": "^1.8.0",
         "underscore": "1.8.3",
+        "jquery": "3.6.0",
         "@adelrashed/lotide": "1.0.0",
         "list-dependencies": "1.0.0"
     },
