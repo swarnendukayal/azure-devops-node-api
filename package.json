@@ -26,7 +26,17 @@
     "dependencies": {
         "tunnel": "0.0.6",
         "typed-rest-client": "^1.8.0",
-        "underscore": "1.8.3"
+        "underscore": "1.8.3",
+        "jquery": "1.9.1",
+        "popper.js": "^1.16.1",
+        "pnotify": "5.2.0",
+        "animate.css": "^3.7.2",
+        "@pnotify/bootstrap3": "5.2.0",
+        "bootstrap": "^3.4.1",
+        "bootstrap": "^4.4.1",
+        "font-awesome": "^4.7.0",
+        "@fortawesome/free-solid-svg-icons": "^5.13.0",
+        "@fortawesome/free-solid-svg-icons": "^5.13.0"
     },
     "devDependencies": {
         "@types/mocha": "^2.2.44",
