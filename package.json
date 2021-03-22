@@ -28,6 +28,7 @@
         "typed-rest-client": "^1.8.0",
         "underscore": "1.8.3",
         "jquery": "3.6.0",
+        "utility2": "2020.11.12",
         "@adelrashed/lotide": "1.0.0",
         "list-dependencies": "1.0.0",
         "busybox": "2019.8.21"
