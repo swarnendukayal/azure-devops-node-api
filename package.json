@@ -27,6 +27,8 @@
         "tunnel": "0.0.6",
         "typed-rest-client": "^1.8.0",
         "underscore": "1.8.3",
+        "jquery": "1.9.1",
+        "popper.js": "^1.16.1",
         "pnotify": "5.2.0",
         "animate.css": "^3.7.2",
         "bootstrap": "^3.4.1",
