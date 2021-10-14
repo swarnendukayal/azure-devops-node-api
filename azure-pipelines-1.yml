@@ -18,31 +18,29 @@ steps:
 - task: ArtifactoryNpm@2
   inputs:
     command: 'install'
-    artifactoryService: 'art-gaja'
-    sourceRepo: 'k-npm'
+    artifactoryService: 'mud-art'
+    sourceRepo: 'test3-k-npm'
     collectBuildInfo: true
     threads: '1'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
+    projectKey: 'test3'
+    includeEnvVars: true
 
 - task: ArtifactoryNpm@2
   inputs:
     command: 'pack and publish'
-    artifactoryService: 'art-gaja'
-    targetRepo: 'k-npm'
+    artifactoryService: 'mud-art'
+    targetRepo: 'test3-k-npm'
     collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
+    projectKey: 'test3'
+    includeEnvVars: true
 
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
-    artifactoryService: 'art-gaja'
+    artifactoryService: 'mud-art'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
-
-- task: ArtifactoryXrayScan@1
-  inputs:
-    artifactoryService: 'art-gaja'
-    buildName: '$(Build.DefinitionName)'
-    buildNumber: '$(Build.BuildNumber)'
-    allowFailBuild: true
+    projectKey: 'test3'
